@@ -1,0 +1,198 @@
+/* 1. Do we want to use prototypes and have main be at the top of the code? (yes/no)
+
+	Dayton: yes -- we can organize the prototypes in alphabetical order that way
+	Darren: x
+	Kenji:  x
+	Yanjie: x
+
+   2. Do we want to use the vector as a global variable? (yes/no)
+
+	Dayton: yes -- easy access and we don't have to pass it all around. we can reset it if necessary.
+	Darren: x
+	Kenji:  x
+	Yanjie: x 
+
+   3. 
+*/
+
+
+// includes
+#include <fstream>
+#include <iostream>
+#include <stdlib>
+
+// use standard namespace
+using namespace std;
+
+// struct to hold information about processes
+struct process{
+	int pid;
+	int time_arrival;
+	... etc.
+};
+
+// to keep track of all processes in queue
+vector<process> queue;
+
+/******************************************************************************
+* Function: print
+*
+* Last edited: 5/2/2019
+*
+* Description:
+*	This function prints the information gathered about the processes in
+*	the queue.
+*
+*******************************************************************************/
+void print(){
+	// print all necessary info
+} // end of print
+
+
+
+
+/********************************************************************************
+* Function: retrieve								*
+*										*
+* Last edited: 5/2/2019								*
+*										*
+* Description:									*
+*	This function retrieves all information about processes in a given	*
+*	file. It saves the information in a vector using a customized struct	*
+*	(process) and calls the print function after every process is placed in	*
+*	the queue. 								*
+*										*
+********************************************************************************/
+void retrieve(){
+	counter = 0;
+	while(true){
+
+/****************************************************************************
+*     the code below is wrong, but idk how to use vectors so ¯\_('-')_/¯    *
+****************************************************************************/
+
+		queue[counter].pid >> inFile;
+		queue[counter].time_arrival >> inFile;
+		... etc.
+		queue.pushback(counter);
+		counter++;
+
+
+		// print(); maybe print here?
+
+	}
+} // end of retrieve
+
+
+
+
+/********************************************************************************
+* Function: page100								*
+*										*
+* Last edited: 5/2/2019								*
+*										*
+* Description:									*
+*	This function does stuff when paging is equal to 100.			*
+*										*
+********************************************************************************/
+void page100(){
+	retrieve();
+} // end of page100
+
+
+
+
+/********************************************************************************
+* Function: page200								*
+*										*
+* Last edited: 5/2/2019								*
+*										*
+* Description:									*
+*	This function does stuff when paging is equal to 200.			*
+*										*
+********************************************************************************/
+void page200(){
+	retrieve();
+} // end of page200
+
+
+
+
+/********************************************************************************
+* Function: page400								*
+*										*
+* Last edited: 5/2/2019								*
+*										*
+* Description:									*
+*	This function does stuff when paging is equal to 400.			*
+*										*
+********************************************************************************/
+void page400(){
+	retrieve();
+} // end of page400
+
+
+
+
+/********************************************************************************
+* Function: menu								*
+* 										*
+* Last edited: 5/2/2019								*
+*										*
+* Description:									*
+*	This function presents the user with a menu. It asks the user which	*
+*	action they would like to perform. Depending on the user input, we	*
+*	access the appropriate paging technique.				*
+*										*
+********************************************************************************/
+void menu(){
+		cout << "Please enter the number of the corresponding action you'd like to complete.\n";
+		cout << " 1. Test page files with base 100.\n";
+		cout << " 2. Test page files with base 200.\n";
+		cout << " 3. Test page files with base 400.\n";
+		cout << " 4. Exit. \n >>";
+		cin >> userinput;
+	
+		switch(userinput){
+	
+		case 1:
+		page100();
+		break;
+
+		case 2:
+		page200();
+		break;
+
+		case 3:
+		page400();
+		break;
+
+		case 4:
+		exit(1);
+
+		default:
+		cout << "Invalid response. Please try again."
+		menu();
+		break;
+
+		}
+} // end of menu
+
+
+
+
+/********************************************************************************
+* Function: main								*
+*										*
+* Last edited: 5/2/2019								*
+*										*
+* Description:									*
+*	This function is where the program starts. It navigates to the menu and	*
+*	the rest of the application's process occurs through various function	*
+*	calls.									*
+*										*
+********************************************************************************/
+void main(){
+	menu();
+	
+} // end of main
