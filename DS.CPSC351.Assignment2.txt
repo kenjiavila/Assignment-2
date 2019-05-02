@@ -11,8 +11,6 @@
 	Darren: x
 	Kenji:  x
 	Yanjie: x 
-
-   3. 
 */
 
 
@@ -68,7 +66,7 @@ void retrieve(){
 	while(true){
 
 /****************************************************************************
-*     the code below is wrong, but idk how to use vectors so ¯\_('-')_/¯    *
+*     the code below is wrong, but idk how to use vectors so Â¯\_('-')_/Â¯    *
 ****************************************************************************/
 
 		queue[counter].pid >> inFile;
