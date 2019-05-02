@@ -65,9 +65,9 @@ void retrieve(){
 	counter = 0;
 	while(true){
 
-/****************************************************************************
-*     the code below is wrong, but idk how to use vectors so ¯\_('-')_/¯    *
-****************************************************************************/
+/********************************************************************************
+*  the code below is probably wrong, but idk how to use vectors so ¯\_('-')_/¯  *
+********************************************************************************/
 
 		queue[counter].pid >> inFile;
 		queue[counter].time_arrival >> inFile;
