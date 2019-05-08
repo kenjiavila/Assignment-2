@@ -10,6 +10,7 @@ using namespace std;
 
 int totalmemory = 2000;
 int totalprocesses;
+int timer = 0;
 
 struct process    //struct to contain all information needed
 {
